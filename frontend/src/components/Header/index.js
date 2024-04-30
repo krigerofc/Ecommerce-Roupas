@@ -6,16 +6,16 @@ function Header(){
         <header className={styles.header}>
             <div>
                 <Link to='/'>
-                    <span>High</span>
+                    <span>Store</span>
                 </Link>
                 <Link to='/'>Coleção</Link>
                 <Link to='/'>Acessórios</Link>
                 <Link to='/'>Roupas</Link>
             </div>
             <nav>
-                <Link to='/'>Lista de desejo</Link>
-                <Link to='/'>Entrar</Link>
-                <Link to='/'>Carrinho</Link>
+                <Link to='/'><i class="fa-regular fa-heart"></i></Link>
+                <Link to='/'><i class="fa-solid fa-user"></i></Link>
+                <Link to='/'><i class="fa-solid fa-cart-shopping"></i></Link>
             </nav>
         </header>
     );
