@@ -20,7 +20,7 @@ function Header(){
             <div className={styles.header}>
                 <div>
                     <Link to='/'>
-                        <span>Store</span>
+                        <span>Tester</span>
                     </Link>
                 </div>
                 <nav>
@@ -35,6 +35,16 @@ function Header(){
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </nav>
+            </div>
+
+            <div className={styles.nav_segundo}>
+                <Link to='/'>Promoção</Link>
+                <Link to='/'>Recomendado</Link>
+                <Link to='/'>Camisas & Jaquetas</Link>
+                <Link to='/'>Calças</Link>
+                <Link to='/'>Sapatos</Link>
+                <Link to='/'>Masculino</Link>
+                <Link to='/'>Feminino</Link>
             </div>
 
             <div 
@@ -60,6 +70,7 @@ function Header(){
                     <li><Link to='/'>Roupas Femininas</Link></li>
                 </ul>
             </div>
+
         </header>
     );
 }
