@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import styles from './Banner.module.css'
 
 function Banner(){
     return(
-        <section className={styles.banner}>
-        </section>
+        <Link to='/'>
+            <section className={styles.banner}>
+            </section>
+        </Link>
     );
 }
 

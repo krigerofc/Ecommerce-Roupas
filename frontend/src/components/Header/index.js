@@ -20,7 +20,7 @@ function Header(){
             <div className={styles.header}>
                 <div>
                     <Link to='/'>
-                        <span>Tester</span>
+                        <span>Kriger</span>
                     </Link>
                 </div>
                 <nav>
