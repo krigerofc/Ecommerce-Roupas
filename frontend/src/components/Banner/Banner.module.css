@@ -4,11 +4,11 @@
     width: 80%;
     margin: auto;
     box-sizing:  border-box;
-    background-color: rgb(48, 47, 47);
+    background:url('Banner.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 65%;
     background-position: center;
 }
