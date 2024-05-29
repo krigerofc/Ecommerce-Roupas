@@ -36,9 +36,15 @@ class Category(models.Model):
         
 
 class Products(models.Model):
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('U', 'Unisex'),
+    ]
     # info basic
     product_name = models.CharField(max_length=255, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=False, null=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
     discount = models.DecimalField(max_digits=5, decimal_places=2, blank=False, null=False)
