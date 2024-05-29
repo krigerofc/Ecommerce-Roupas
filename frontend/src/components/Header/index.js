@@ -20,7 +20,7 @@ function Header(){
             <div className={styles.header}>
                 <div>
                     <Link to='/'>
-                        <span>Store</span>
+                        <span>Kriger</span>
                     </Link>
                 </div>
                 <nav>
@@ -35,6 +35,16 @@ function Header(){
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </nav>
+            </div>
+
+            <div className={styles.nav_segundo}>
+                <Link to='/'>Lançamentos</Link>
+                <Link to='/'>Recomendados</Link>
+                <Link to='/'>Camisas & Jaquetas</Link>
+                <Link to='/'>Calças</Link>
+                <Link to='/'>Sapatos</Link>
+                <Link to='/'>Masculino</Link>
+                <Link to='/'>Feminino</Link>
             </div>
 
             <div 
@@ -58,8 +68,13 @@ function Header(){
                     <li><Link to='/'>Acessórios</Link></li>
                     <li><Link to='/'>Roupas Masculinas</Link></li>
                     <li><Link to='/'>Roupas Femininas</Link></li>
+                    <li><Link to='/'>Calças</Link></li>
+                    <li><Link to='/'>Camisas & blusas</Link></li>
+                    <li><Link to='/'>Sapatos</Link></li>
+                    <li><Link to='/'>Chapeus</Link></li>
                 </ul>
             </div>
+
         </header>
     );
 }
