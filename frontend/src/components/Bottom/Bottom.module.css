@@ -1,0 +1,50 @@
+.bottom{
+    width: 100%;
+    height: 100vh;
+    background: url('../../../public/imgs/Banner.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(7, 7, 7, 0.493);
+    background-blend-mode: multiply;
+    /* config */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* texto */
+    font-family: "Roboto", sans-serif;
+}
+
+.bottom h2{
+    color: rgb(238, 238, 238);
+    letter-spacing: 3px;
+    font-size: 4.3rem;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    margin-bottom: 20px;
+}
+
+.bottom p{
+    font-size: 1.3rem;
+    padding-top: 2px;
+    color: rgb(199, 197, 197);
+}
+
+.promo{
+    position: absolute;
+    padding-top: 115px;
+    height: 160px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(8, 8, 8);;
+    /* texto */
+    color: white;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: 300;
+
+}

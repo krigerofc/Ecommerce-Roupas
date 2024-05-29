@@ -1,0 +1,24 @@
+.category{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    position: static;
+    padding-top: 20px;
+}
+
+.category h2{
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 30px;
+}
+
+.category section{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

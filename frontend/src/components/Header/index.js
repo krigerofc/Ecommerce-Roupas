@@ -38,8 +38,8 @@ function Header(){
             </div>
 
             <div className={styles.nav_segundo}>
-                <Link to='/'>Promoção</Link>
-                <Link to='/'>Recomendado</Link>
+                <Link to='/'>Lançamentos</Link>
+                <Link to='/'>Recomendados</Link>
                 <Link to='/'>Camisas & Jaquetas</Link>
                 <Link to='/'>Calças</Link>
                 <Link to='/'>Sapatos</Link>
@@ -68,6 +68,10 @@ function Header(){
                     <li><Link to='/'>Acessórios</Link></li>
                     <li><Link to='/'>Roupas Masculinas</Link></li>
                     <li><Link to='/'>Roupas Femininas</Link></li>
+                    <li><Link to='/'>Calças</Link></li>
+                    <li><Link to='/'>Camisas & blusas</Link></li>
+                    <li><Link to='/'>Sapatos</Link></li>
+                    <li><Link to='/'>Chapeus</Link></li>
                 </ul>
             </div>
 

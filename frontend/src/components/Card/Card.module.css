@@ -1,0 +1,41 @@
+.card{
+    width: 17%;
+}
+
+.card img{
+    width: 95%;
+    height: 70%;
+}
+
+.card section{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.card h4{
+    text-align: start;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.0rem;
+    color: rgb(10, 10, 10);
+}
+
+.card p{
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    color: rgb(107, 107, 107);
+    font-size: 1.0rem;
+}
+
+.card button{
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    width: 150px;
+    border: none;
+}

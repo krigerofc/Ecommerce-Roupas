@@ -54,7 +54,7 @@ function Footer(){
                 </div>
             </div>
             <div className={style.mark}>
-                <h3>Copyright © 2024 - Store. Todo os direitos reservados</h3>
+                <h3>Copyright © 2024 - Kriger Store. Todo os direitos reservados</h3>
             </div>
         </footer>
     );
