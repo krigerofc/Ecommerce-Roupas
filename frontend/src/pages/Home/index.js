@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import Bottom from "../../components/Bottom";
 import Card from "../../components/Card";
 import Category from "../../components/Category";
@@ -5,29 +7,39 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
 // TESTE DE CARD - Remover  
-import roupas1 from '../../components/Card/dewa.jpg'
-import roupas2 from '../../components/Card/mulher1.jpg'
-import roupas3 from '../../components/Card/R.jpg'
-import roupas4 from '../../components/Card/roupa.png'
+const Home = () => {
+    const [data, setData] = useState({top_selling:[], latest_product:[]});
 
-function Home(){
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/teste');
+                setData(response.data);
+            } catch (error) {
+                console.error('Erro na solicitação:', error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
     return(
         <>
             <Header/>
             <Bottom/>
             <Category Category='Lançamentos'>
-                <Card id={roupas1}/>
-                <Card id={roupas2}/>
-                <Card id={roupas3}/>
-                <Card id={roupas4}/>
-                <Card id={roupas1}/>
+                {data.latest_product.map(item => (
+                    item.images.map(images => (
+                        <Card key={item.id} id={item.id} name={item.product_name} price={item.price} url={images.image}/>
+                    ))
+                ))}
             </Category>
             <Category Category='Mais Vendidos'>
-                <Card id={roupas1}/>
-                <Card id={roupas2}/>
-                <Card id={roupas3}/>
-                <Card id={roupas4}/>
-                <Card id={roupas1}/>
+                {data.top_selling.map(item => (
+                    item.images.map(images => (
+                        <Card key={item.id} id={item.id} name={item.product_name} price={item.price} url={images.image}/>
+                    ))
+                ))}
             </Category>
             <Footer/>
         </>

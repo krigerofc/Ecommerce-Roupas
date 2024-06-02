@@ -1,12 +1,12 @@
 import styles from './Card.module.css'
 
-function Card( {id} ){
+function Card( {id, name, price, url} ){
     return(
         <div className={styles.card}>
-            <img src={id} alt='roupas'/>
+            <img src={url} alt='roupas'/>
             <section>
-            <h4>Vestido Vermelho de teste para a loja</h4>
-            <p>Por: R$120,00</p>
+            <h4>{name}</h4>
+            <p>Por: R${price}</p>
             <button>Comprar</button>
             </section>
         </div>
