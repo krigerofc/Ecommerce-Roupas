@@ -34,6 +34,13 @@ class Category(models.Model):
     def __str__(self):
         return self.name
         
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)  # Nome da categoria
+    description = models.TextField()  # Descrição opcional da categoria
+
+    def __str__(self):
+        return self.name
+        
 
 class Products(models.Model):
     GENDER_CHOICES = [
@@ -41,26 +48,32 @@ class Products(models.Model):
         ('F', 'Female'),
         ('U', 'Unisex'),
     ]
+
+    SIZE_CHOICES = {
+        ('PP', 'PP'),
+        ('P', 'P'),
+        ('M', 'M'),
+        ('G', 'G'),
+        ('GG', 'GG')
+    }
+
+    DISCOUNT_CHOICES = (
+        (5, '5%'), (0, '0%'), (10, '10%'), (15, '15%'), 
+        (20, '20%'), (25, '25%'), (30, '30%'), (50, '50%'),
+    )
     # info basic
     product_name = models.CharField(max_length=255, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=False, null=False)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=False, null=False, default='M')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
-    discount = models.DecimalField(max_digits=5, decimal_places=2, blank=False, null=False)
-    size = models.CharField(max_length=50, blank=False, null=False)
+    discount = models.DecimalField(max_digits=2, decimal_places=0, choices=DISCOUNT_CHOICES, blank=False, null=False, default=0)
+    size = models.CharField(max_length=2, choices=SIZE_CHOICES, blank=False, null=False, default='M')
     quantity_available = models.IntegerField(default=0, blank=False, null=False) #estoque
     quantity_sold = models.IntegerField(default=0, blank=False, null=False)
 
     # Info product
-    brand = models.CharField(max_length=100, blank=False, null=False)
-    material = models.CharField(max_length=100, blank=False, null=False)
     availability = models.BooleanField(default=True, blank=False, null=False)
-    size_pp = models.BooleanField(default=True, blank=False, null=False)
-    size_p = models.BooleanField(default=True, blank=False, null=False)
-    size_m = models.BooleanField(default=True, blank=False, null=False)
-    size_g = models.BooleanField(default=True, blank=False, null=False)
-    size_gg = models.DecimalField(max_digits=3, decimal_places=2, blank=False, null=False)
     release_date = models.DateField(blank=False, null=False)
 
     def __str__(self):
@@ -69,9 +82,9 @@ class Products(models.Model):
 class Image_product(models.Model):
     product_id = models.ForeignKey(Products, on_delete=models.CASCADE)
     color = models.CharField(max_length=50, blank=False, null=False)
-    image = models.ImageField(upload_to='product_images/', blank=False, null=False)
+    image_url = models.URLField(max_length=400, blank=False, null=False)
     def __str__(self):
-        return self.product_name
+        return str(self.product_id)
 
 class Orders(models.Model):
     STATUS_CHOICES = [
